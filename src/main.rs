@@ -141,6 +141,7 @@ fn main() {
         }
     }
     cats.sort();
+    println!("<openbox_pipe_menu>");
     for cat in cats {
         let name: &str = if rename.contains_key(&cat.as_str()) {
             rename.get(&cat.as_str()).unwrap().to_owned()
@@ -157,7 +158,7 @@ fn main() {
                     .any(|c| aliases.map(|al| al.contains(&c.as_str())).unwrap_or(false))
         }) {
             // println!(" - {}", app.name);
-            println!("\t<item label=\"{name}\" icon=\"{icon}>\"", name=app.name, icon=app.icon);
+            println!("\t<item label=\"{name}\" icon=\"{icon}\">", name=app.name, icon=app.icon);
             println!("\t\t<action name=\"Execute\">");
             println!("\t\t\t<command>{}</command>", app.exec);
             println!("\t\t</action>");
@@ -165,4 +166,5 @@ fn main() {
         }
         println!("</menu>");
     }
+    println!("</openbox_pipe_menu>");
 }
