@@ -1,5 +1,6 @@
 # Robert
 _The Rust OpenBox Executable Run Tool_
+
 A menu generator for Openbox.
 
 Uses XDG_DATA_DIRS environment variable to find desktop entries and outputs
